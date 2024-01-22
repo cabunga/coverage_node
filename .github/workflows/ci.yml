@@ -14,6 +14,19 @@ jobs:
       - run: yarn build
       # Build sonar reports
       - run: yarn test-coverage
+      - name: Create file ${{ inputs.tag }}
+        run: |
+          ls
+          echo "sonar.branch.name=main" >> sonar-project.properties
+          echo "sonar.organization=cabunga-github" >> sonar-project.properties
+          echo "sonar.projectKey=cabunga-github_coveragephp" >> sonar-project.properties
+          echo "sonar.sources=." >> sonar-project.properties  
+          echo "sonar.php.coverage.reportPaths=coverage.xml" >> sonar-project.properties  
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}     
       # Build Storybook
       - run: yarn build-storybook
       - run: mkdir -p deploy/storybook
