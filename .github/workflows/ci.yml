@@ -1,4 +1,4 @@
-name: Wilco CI
+name: NODE CI
 on: [push]
 jobs:
   test-build:
