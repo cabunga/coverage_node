@@ -17,7 +17,7 @@ jobs:
       - name: Create file ${{ inputs.tag }}
         run: |
           ls
-          echo "sonar.branch.name=main" >> sonar-project.properties
+          echo "sonar.branch.name=master" >> sonar-project.properties
           echo "sonar.organization=cabunga-github" >> sonar-project.properties
           echo "sonar.projectKey=cabunga-github_coveragephp" >> sonar-project.properties
           echo "sonar.sources=." >> sonar-project.properties  
