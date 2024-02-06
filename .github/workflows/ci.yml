@@ -9,6 +9,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 15
+      - run: apt install python2-minimal  -y          
       - run: yarn
       # Build modules
       - run: yarn build
