@@ -16,6 +16,7 @@ jobs:
             This is an example of the text that
             will be present on the annotation
           grafanaTags: poc_deploy
+          dashboardId: 2
       - uses: actions/setup-node@v1
         with:
           node-version: 15
@@ -32,7 +33,7 @@ jobs:
           # Text of the annotation
           text: demogithub
           # Id. of the dashboard to add the annotation on. If not provided, will be global to all dashboards.
-          #dashboardId:  # optional
+          dashboardId: 2 # optional
           # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
           #panelId: # optional
           # Comma-separated list of tags assigned to the annotation.
