@@ -10,7 +10,7 @@ jobs:
         id: grafana
         uses: hexionas/grafana-annotation-action@v0
         with:
-          grafanaHost: "http://34.228.197.176:3000/"
+          grafanaHost: "http://34.228.197.176:3000"
           grafanaToken: glsa_NDE8hzapE5O9tRnsAEcvXsW9HpHk9vDH_58060308
           grafanaText: |
             This is an example of the text that
