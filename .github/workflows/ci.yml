@@ -34,11 +34,11 @@ jobs:
           # Text of the annotation
           text: demogithub
           # Id. of the dashboard to add the annotation on. If not provided, will be global to all dashboards.
-          dashboardId: 1 # optional
+          #dashboardId:  # optional
           # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
           #panelId: # optional
           # Comma-separated list of tags assigned to the annotation.
-          #tags: # optional
+          tags: notificacion# optional
           
       - run: yarn
       # Build modules
