@@ -28,7 +28,7 @@ jobs:
         uses: frankie567/grafana-annotation-action@v1.0.2
         with:
           # Grafana API host
-          apiHost: http://34.228.197.176:3000/
+          apiHost: http://34.228.197.176:3000
           # Grafana API token
           apiToken: glsa_NDE8hzapE5O9tRnsAEcvXsW9HpHk9vDH_58060308
           # Text of the annotation
