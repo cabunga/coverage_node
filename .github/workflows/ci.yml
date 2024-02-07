@@ -38,7 +38,7 @@ jobs:
           # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
           #panelId: # optional
           # Comma-separated list of tags assigned to the annotation.
-          tags: notificacion# optional
+          tags: por_deploy # optional
           
       - run: yarn
       # Build modules
