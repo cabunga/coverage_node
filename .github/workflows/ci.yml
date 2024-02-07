@@ -15,9 +15,7 @@ jobs:
           grafanaText: |
             This is an example of the text that
             will be present on the annotation
-          grafanaTags: |
-            type:performance
-            service:sre-smart-scaling-api
+          grafanaTags: poc_deploy
       - uses: actions/setup-node@v1
         with:
           node-version: 15
@@ -38,7 +36,7 @@ jobs:
           # Id. of the panel to add the annotation on. If not provided, will be global to all panels.
           #panelId: # optional
           # Comma-separated list of tags assigned to the annotation.
-          tags: por_deploy # optional
+          tags: poc_deploy # optional
           
       - run: yarn
       # Build modules
