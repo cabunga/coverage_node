@@ -38,7 +38,14 @@ jobs:
           #panelId: # optional
           # Comma-separated list of tags assigned to the annotation.
           tags: poc_deploy # optional
-          
+      - name: Action that takes some time
+        run: sleep 30
+      - name: Update Grafana annotation
+        uses: hexionas/grafana-annotation-action@v0
+        with:
+          grafanaHost: "http://34.228.197.176:3000"
+          grafanaToken: lsa_NDE8hzapE5O9tRnsAEcvXsW9HpHk9vDH_58060308
+          grafanaAnnotationID: ${{ steps.grafana.outputs.annotation-id }}          
       - run: yarn
       # Build modules
       - run: yarn build
