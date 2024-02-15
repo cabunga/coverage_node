@@ -10,7 +10,7 @@ jobs:
         uses: masci/elastic-logs@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          cloud-id: http://35.175.218.185:5601
+          cloud-id: http://35.175.218.185
           username: elastic
           password: changeme
           job-names: build
