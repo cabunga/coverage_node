@@ -6,14 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: qryn-logs        
-        uses: metrico/loki-action@V3.1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          endpoint: http://52.206.115.195:3000
-          username: admin
-          password: admin
-          job-names: build
+
       - uses: actions/setup-node@v1
         with:
           node-version: 15
@@ -59,6 +52,14 @@ jobs:
           echo "sonar.projectKey=cabunga-github_node" >> sonar-project.properties
           echo "sonar.sources=." >> sonar-project.properties  
           echo "sonar.javascript.lcov.reportPaths=./coverage/lcov.info" >> sonar-project.properties  
+      - name: qryn-logs        
+        uses: metrico/loki-action@V3.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          endpoint: http://52.206.115.195:3000
+          username: admin
+          password: admin
+          job-names: test-build          
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@master
         env:
