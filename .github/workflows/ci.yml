@@ -6,13 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: elastic-logs        
-        uses: masci/elastic-logs@v1
+      - name: qryn-logs        
+        uses: metrico/loki-action@V3.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          cloud-id: http://35.175.218.185
-          username: elastic
-          password: changeme
+          endpoint: http://52.206.115.195:3000
+          username: admin
+          password: admin
           job-names: build
       - uses: actions/setup-node@v1
         with:
